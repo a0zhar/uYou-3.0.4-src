@@ -590,32 +590,32 @@ void __cdecl -[uYouWelcome viewDidLoad](uYouWelcome *self, SEL a2) {
 }
 
 void __cdecl -[uYouWelcome dismissWelcomeController](uYouWelcome *self, SEL a2) {
-  void *v3; // x0
-  id v4; // x20
-  void *v5; // x0
-  id v6; // x21
-  void *v7; // x0
-  id v8; // x20
-  __int64 v9; // x1
-  void *v10; // x0
-  id v11; // x19
+    void *userDefaultsPointer; // x0 - Represents a pointer to NSUserDefaults
+    id userDefaults; // x20 - Represents the retained instance of NSUserDefaults
+    void *numberPointer; // x0 - Represents a pointer to NSNumber
+    id numberInstance; // x21 - Represents the retained instance of NSNumber
+    void *anotherUserDefaultsPointer; // x0 - Another pointer to NSUserDefaults
+    id anotherUserDefaultsInstance; // x20 - Another retained instance of NSUserDefaults
+    __int64 downloadsManagerID; // x1 - ID related to DownloadsManager
+    void *downloadsManagerPointer; // x0 - Pointer to DownloadsManager instance
+    id downloadsManagerInstance; // x19 - Retained instance of DownloadsManager
 
-  v3 = (void *)sub_12E70A0(&OBJC_CLASS___NSUserDefaults);
-  v4 = objc_retainAutoreleasedReturnValue(v3);
-  v5 = (void *)sub_12DBC40(&OBJC_CLASS___NSNumber);
-  v6 = objc_retainAutoreleasedReturnValue(v5);
-  sub_12E3860(v4);
-  objc_release(v6);
-  objc_release(v4);
-  v7 = (void *)sub_12E70A0(&OBJC_CLASS___NSUserDefaults);
-  v8 = objc_retainAutoreleasedReturnValue(v7);
-  sub_12E7C00(v8);
-  objc_release(v8);
-  sub_12D5580(self);
-  v10 = (void *)sub_12E6880(&OBJC_CLASS___DownloadsManager, v9);
-  v11 = objc_retainAutoreleasedReturnValue(v10);
-  sub_12E7FA0(v11);
-  objc_release(v11);
+    userDefaultsPointer = (void *)sub_12E70A0(&OBJC_CLASS___NSUserDefaults);
+    userDefaults = objc_retainAutoreleasedReturnValue(userDefaultsPointer);
+    numberPointer = (void *)sub_12DBC40(&OBJC_CLASS___NSNumber);
+    numberInstance = objc_retainAutoreleasedReturnValue(numberPointer);
+    sub_12E3860(userDefaults);
+    objc_release(numberInstance);
+    objc_release(userDefaults);
+    anotherUserDefaultsPointer = (void *)sub_12E70A0(&OBJC_CLASS___NSUserDefaults);
+    anotherUserDefaultsInstance = objc_retainAutoreleasedReturnValue(anotherUserDefaultsPointer);
+    sub_12E7C00(anotherUserDefaultsInstance);
+    objc_release(anotherUserDefaultsInstance);
+    sub_12D5580(self);
+    downloadsManagerPointer = (void *)sub_12E6880(&OBJC_CLASS___DownloadsManager, downloadsManagerID);
+    downloadsManagerInstance = objc_retainAutoreleasedReturnValue(downloadsManagerPointer);
+    sub_12E7FA0(downloadsManagerInstance);
+    objc_release(downloadsManagerInstance);
 }
 
 void __cdecl -[uYouWelcome openTwitterForUser:](uYouWelcome *self, SEL a2, id a3) {
