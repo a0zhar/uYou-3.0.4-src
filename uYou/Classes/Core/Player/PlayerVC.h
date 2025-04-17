@@ -1,0 +1,40 @@
+#import <Foundation/Foundation.h>
+
+@interface PlayerVC : NSObject
+- (void)init;
+- (void)dealloc;
+- (void)viewWillAppear:;
+- (void)viewWillDisappear:;
+- (void)willTransitionToTraitCollection:withTransitionCoordinator:;
+- (void)_setPopupItemButtonsWithTraitCollection:;
+- (void)prefersStatusBarHidden;
+- (void)preferredStatusBarStyle;
+- (void)preferredStatusBarUpdateAnimation;
+- (void)ytBackgroundColor;
+- (void)ytTextColor;
+- (void)updatePageStyles;
+- (void)close;
+- (void)play;
+- (void)pause;
+- (void)next;
+- (void)previous;
+- (void)repeat;
+- (void)shuffle;
+- (void)updatePlayer;
+- (void)updateProgress;
+- (void)sliderValueChanged:forEvent:;
+- (void)optionButton:;
+- (void)getLyricsButton:;
+- (void)createTmpLinkURLToFileAtPath:withName:;
+- (void)textViewShouldBeginEditing:;
+- (void)isRTL;
+- (void)playButton;
+- (void)setPlayButton:;
+- (void)nextButton;
+- (void)setNextButton:;
+- (void)previousButton;
+- (void)setPreviousButton:;
+- (void)closeButton;
+- (void)setCloseButton:;
+- (void)artworkImageView;
+@end

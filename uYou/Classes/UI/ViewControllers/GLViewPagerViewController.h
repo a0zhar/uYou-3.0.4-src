@@ -1,0 +1,47 @@
+#import <Foundation/Foundation.h>
+
+@interface GLViewPagerViewController : NSObject
+- (void)init;
+- (void)awakeFromNib;
+- (void)dealloc;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:;
+- (void)viewDidLoad;
+- (void)pageViewController:viewControllerBeforeViewController:;
+- (void)pageViewController:viewControllerAfterViewController:;
+- (void)pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:;
+- (void)scrollViewWillBeginDragging:;
+- (void)scrollViewDidEndDecelerating:;
+- (void)scrollViewWillEndDragging:withVelocity:targetContentOffset:;
+- (void)scrollViewDidScroll:;
+- (void)tapInTabView:;
+- (void)defaultSetup;
+- (void)setDataSource:;
+- (void)setDelegate:;
+- (void)reloadData;
+- (void)tabViewAtIndex:;
+- (void)_selectTab:animate:;
+- (void)_setNeedsReload;
+- (void)_reloadDataIfNeed;
+- (void)_layoutSubviews;
+- (void)_setActiveTabIndex:;
+- (void)_setActivePageIndex:;
+- (void)_getTabWidthAtIndex:;
+- (void)_caculateIndicatorViewFrame:;
+- (void)_caculateTabOffsetWidth:;
+- (void)_disableViewPagerScroll;
+- (void)_enableViewPagerScroll;
+- (void)tabContentView;
+- (void)indicatorView;
+- (void)pageViewController;
+- (void)contentViewControllers;
+- (void)contentViews;
+- (void)tabViews;
+- (void)setPageViewController:;
+- (void)headerView;
+- (void)setHeaderView:;
+- (void)dataSource;
+- (void)delegate;
+- (void)indicatorColor;
+- (void)setIndicatorColor:;
+@end

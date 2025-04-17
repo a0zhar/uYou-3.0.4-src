@@ -40,7 +40,8 @@ DownloadsManager *__cdecl -[DownloadsManager init](DownloadsManager *self, SEL a
   v37.receiver = self;
   v37.super_class = (Class)&OBJC_CLASS___DownloadsManager;
   v2 = objc_msgSendSuper2(&v37, "init");
-  if (v2) {
+  if ( v2 )
+  {
     v3 = objc_opt_new(&OBJC_CLASS___NSMutableDictionary);
     ffmpegExecutions = v2->ffmpegExecutions;
     v2->ffmpegExecutions = (NSMutableDictionary *)v3;
@@ -287,9 +288,12 @@ void __cdecl -[DownloadsManager loadingHUDWithMeessage:inView:](DownloadsManager
   sub_12E2760(self->HUD);
   objc_release(v16);
   v22 = self->HUD;
-  if (v6) {
+  if ( v6 )
+  {
     -[JGProgressHUD showInRect:inView:]_0(self->HUD, v17, *(CGRect *)&v18, v6);
-  } else {
+  }
+  else
+  {
     v23 = (void *)sub_12E8780(self);
     v24 = objc_retainAutoreleasedReturnValue(v23);
     v26 = (void *)-[UIViewController viewForPopupInteractionGestureRecognizer]_0(v24, v25);
@@ -347,9 +351,12 @@ void __cdecl -[DownloadsManager downloadingHUDWithMeessage:inView:](DownloadsMan
   sub_12E2760(self->HUD);
   objc_release(v16);
   v22 = self->HUD;
-  if (v6) {
+  if ( v6 )
+  {
     -[JGProgressHUD showInRect:inView:]_0(self->HUD, v17, *(CGRect *)&v18, v6);
-  } else {
+  }
+  else
+  {
     v23 = (void *)sub_12E8780(self);
     v24 = objc_retainAutoreleasedReturnValue(v23);
     v26 = (void *)-[UIViewController viewForPopupInteractionGestureRecognizer]_0(v24, v25);
@@ -408,9 +415,12 @@ void __cdecl -[DownloadsManager successHUDWithMeessage:inView:](DownloadsManager
   sub_12E2760(self->HUD);
   objc_release(v16);
   v22 = self->HUD;
-  if (v6) {
+  if ( v6 )
+  {
     -[JGProgressHUD showInRect:inView:]_0(self->HUD, v17, *(CGRect *)&v18, v6);
-  } else {
+  }
+  else
+  {
     v23 = (void *)sub_12E8780(self);
     v24 = objc_retainAutoreleasedReturnValue(v23);
     v26 = (void *)-[UIViewController viewForPopupInteractionGestureRecognizer]_0(v24, v25);
@@ -476,9 +486,12 @@ void __cdecl -[DownloadsManager errorHUDWithMeessage:inView:delay:](
   objc_release(v18);
   sub_12E7FA0(self);
   v24 = self->HUD;
-  if (v8) {
+  if ( v8 )
+  {
     -[JGProgressHUD showInRect:inView:]_0(self->HUD, v19, *(CGRect *)&v20, v8);
-  } else {
+  }
+  else
+  {
     v25 = (void *)sub_12E8780(self);
     v26 = objc_retainAutoreleasedReturnValue(v25);
     v28 = (void *)-[UIViewController viewForPopupInteractionGestureRecognizer]_0(v26, v27);
@@ -488,7 +501,7 @@ void __cdecl -[DownloadsManager errorHUDWithMeessage:inView:delay:](
     objc_release(v26);
   }
   v31 = a5;
-  if (a5 == 0.0 )
+  if ( a5 == 0.0 )
     v31 = 1.5;
   sub_12D54C0(self->HUD, v31);
   objc_release(v8);
@@ -793,12 +806,13 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
   v35 = (void *)sub_12DBEE0(v34);
   v36 = objc_retainAutoreleasedReturnValue(v35);
   v37 = v36;
-  if (!v36 )
+  if ( !v36 )
     v36 = CFSTR("both");
   v181 = objc_retain(v36);
   objc_release(v37);
   objc_release(v34);
-  if (sub_12D3DC0(v28) && sub_12D3DC0(v32)) {
+  if ( sub_12D3DC0(v28) && sub_12D3DC0(v32) )
+  {
     v167 = v9;
     v169 = v10;
     v170 = v32;
@@ -872,7 +886,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
     v76 = objc_retainAutoreleasedReturnValue(v75);
     LOBYTE(v72) = sub_12D9C60(v76);
     objc_release(v76);
-    if (((unsigned __int8)v72 & 1) != 0 )
+    if ( ((unsigned __int8)v72 & 1) != 0 )
     {
       v161 = v68;
       v191 = 0u;
@@ -882,7 +896,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
       obj = objc_retain(v32);
       v77 = v175;
       v178 = sub_12D3DE0(obj);
-      if (v178 )
+      if ( v178 )
       {
         v176 = *(_QWORD *)v190;
         v78 = &classRef_NSNumber;
@@ -890,13 +904,13 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
         {
           for ( i = 0LL; i != v178; ++i )
           {
-            if (*(_QWORD *)v190 != v176 )
+            if ( *(_QWORD *)v190 != v176 )
               objc_enumerationMutation(obj);
             v80 = *(_QWORD *)(*((_QWORD *)&v189 + 1) + 8 * i);
             v81 = (void *)objc_opt_new(&OBJC_CLASS___NSMutableDictionary);
             v82 = (void *)sub_12DDAC0(v80);
             v83 = objc_retainAutoreleasedReturnValue(v82);
-            if ((unsigned int)sub_12CE0E0(v80) )
+            if ( (unsigned int)sub_12CE0E0(v80) )
               v84 = CFSTR("mp4");
             else
               v84 = CFSTR("webm");
@@ -916,7 +930,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
             sub_12E3860(v81);
             objc_release(v93);
             sub_12E5E00(v77);
-            if (v177 )
+            if ( v177 )
             {
               v94 = (void *)sub_12DBD60(*v78);
               v95 = objc_retainAutoreleasedReturnValue(v94);
@@ -926,7 +940,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
             }
             sub_12E3860(v81);
             sub_12E3860(v81);
-            if ((sub_12D9C60(v181) & 1) != 0 || (unsigned int)sub_12D9C60(v181) )
+            if ( (sub_12D9C60(v181) & 1) != 0 || (unsigned int)sub_12D9C60(v181) )
             {
               v96 = NSClassFromString(&CFSTR("YTActionSheetAction").isa);
               v97 = (void *)sub_12E7840(&OBJC_CLASS___NSString);
@@ -965,7 +979,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
       }
       objc_release(obj);
       v105 = v173;
-      if ((sub_12D9C60(v181) & 1) != 0
+      if ( (sub_12D9C60(v181) & 1) != 0
         || (v106 = (void *)sub_12D12E0(v77),
             v107 = objc_retainAutoreleasedReturnValue(v106),
             v108 = sub_12D9C60(v181),
@@ -1018,7 +1032,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
       v203 = v119;
       v120 = objc_retain(v175);
       v204 = v120;
-      if (sub_12D7D40(v32) == 0x7FFFFFFFFFFFFFFFLL )
+      if ( sub_12D7D40(v32) == 0x7FFFFFFFFFFFFFFFLL )
       {
         v162 = v8;
         v218 = CFSTR("2160p60");
@@ -1062,7 +1076,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
           v128 = objc_retainAutoreleasedReturnValue(v127);
           v129 = sub_12D3DC0(v128);
           objc_release(v128);
-          if (v129 <= v126 )
+          if ( v129 <= v126 )
             break;
           v193 = _NSConcreteStackBlock;
           v194 = 3254779904LL;
@@ -1073,14 +1087,14 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
           v130 = sub_12D7D40(v32);
           objc_release(v197);
           ++v126;
-          if (v130 != 0x7FFFFFFFFFFFFFFFLL )
+          if ( v130 != 0x7FFFFFFFFFFFFFFFLL )
           {
             v8 = v162;
             v120 = v179;
             goto LABEL_31;
           }
         }
-        if ((sub_12D9C60(v119) & 1) != 0
+        if ( (sub_12D9C60(v119) & 1) != 0
           || (v150 = (void *)sub_12D12E0(v179),
               v151 = objc_retainAutoreleasedReturnValue(v150),
               v152 = sub_12D9C60(v119),
@@ -1099,7 +1113,7 @@ void __cdecl -[DownloadsManager getLinksLocallyPlayerItem:videoID:sourceView:isS
           v118 = v163;
           v19 = v165;
           v105 = v173;
-          if (v177 )
+          if ( v177 )
           {
             v156 = (void *)sub_12DBD60(&OBJC_CLASS___NSNumber);
             v157 = objc_retainAutoreleasedReturnValue(v156);
@@ -1128,7 +1142,7 @@ LABEL_31:
         v133 = (void *)objc_opt_new(&OBJC_CLASS___NSMutableDictionary);
         v134 = (void *)sub_12DDAC0(v132);
         v135 = objc_retainAutoreleasedReturnValue(v134);
-        if ((unsigned int)sub_12CE0E0(v132) )
+        if ( (unsigned int)sub_12CE0E0(v132) )
           v136 = CFSTR("mp4");
         else
           v136 = CFSTR("webm");
@@ -1149,7 +1163,7 @@ LABEL_31:
         sub_12E3860(v133);
         objc_release(v145);
         sub_12E5E00(v139);
-        if (v177 )
+        if ( v177 )
         {
           v146 = (void *)sub_12DBD60(&OBJC_CLASS___NSNumber);
           v147 = objc_retainAutoreleasedReturnValue(v146);
@@ -1185,7 +1199,9 @@ LABEL_31:
     objc_release(v105);
     v10 = v169;
     v9 = v167;
-  } else {
+  }
+  else
+  {
     sub_12D5FC0(self, 2.0);
   }
   objc_release(v181);
@@ -1336,7 +1352,8 @@ void __cdecl -[DownloadsManager mergeAudioWithMP4VideoForDownloadItem:](Download
   objc_release(v14);
   v17 = (void *)sub_12D4D80(&OBJC_CLASS___NSFileManager);
   v18 = objc_retainAutoreleasedReturnValue(v17);
-  if ((sub_12D64E0(v18) & 1) == 0) {
+  if ( (sub_12D64E0(v18) & 1) == 0 )
+  {
     v58 = v18;
     goto LABEL_5;
   }
@@ -1345,7 +1362,8 @@ void __cdecl -[DownloadsManager mergeAudioWithMP4VideoForDownloadItem:](Download
   v21 = sub_12D64E0(v20);
   objc_release(v20);
   objc_release(v18);
-  if (v21) {
+  if ( v21 )
+  {
     v22 = (void *)sub_12E8DC0(v4);
     v23 = objc_retainAutoreleasedReturnValue(v22);
     sub_12E2900();
@@ -1511,7 +1529,8 @@ void __cdecl -[DownloadsManager addMetadataToAudioForDownloadItem:](DownloadsMan
   v14 = objc_retainAutoreleasedReturnValue(v13);
   v15 = sub_12D64E0(v14);
   objc_release(v14);
-  if (v15) {
+  if ( v15 )
+  {
     v16 = (void *)sub_12E8DC0(v4);
     v17 = objc_retainAutoreleasedReturnValue(v16);
     sub_12E2900();
@@ -1639,7 +1658,8 @@ void __cdecl -[DownloadsManager mergeAudioWithVideoForDownloadItem:](DownloadsMa
   objc_release(v10);
   v13 = (void *)sub_12D4D80(&OBJC_CLASS___NSFileManager);
   v14 = objc_retainAutoreleasedReturnValue(v13);
-  if (!(unsigned int)sub_12D64E0(v14)) {
+  if ( !(unsigned int)sub_12D64E0(v14) )
+  {
 LABEL_7:
     objc_release(v14);
     goto LABEL_8;
@@ -1649,7 +1669,8 @@ LABEL_7:
   v17 = sub_12D64E0(v16);
   objc_release(v16);
   objc_release(v14);
-  if (v17) {
+  if ( v17 )
+  {
     v18 = (void *)sub_12E8DC0(v4);
     v19 = objc_retainAutoreleasedReturnValue(v18);
     sub_12E2900();
@@ -1667,7 +1688,7 @@ LABEL_7:
     sub_12E1360(v26);
     objc_release(v26);
     v27 = (void *)sub_12E8DC0(v4);
-    if (v24 )
+    if ( v24 )
     {
       v28 = objc_retainAutoreleasedReturnValue(v27);
       v29 = (void *)sub_12E85C0();
@@ -1746,8 +1767,9 @@ void __cdecl -[DownloadsManager executeCallback::](DownloadsManager *self, SEL a
   __int64 v16[6]; // [xsp+78h] [xbp-58h] BYREF
   int v17; // [xsp+A8h] [xbp-28h]
 
-  if (a4) {
-    if ((unsigned int)&stru_B8.reserved1 + 3 == a4 )
+  if ( a4 )
+  {
+    if ( (unsigned int)&stru_B8.reserved1 + 3 == a4 )
     {
       NSLog(&CFSTR("Async command execution cancelled by user.\n").isa, a2);
       global_queue = dispatch_get_global_queue(0LL, 0LL);
@@ -1776,7 +1798,9 @@ void __cdecl -[DownloadsManager executeCallback::](DownloadsManager *self, SEL a
       v14 = a4;
       v10 = block;
     }
-  } else {
+  }
+  else
+  {
     v7 = dispatch_get_global_queue(0LL, 0LL);
     v8 = objc_retainAutoreleasedReturnValue(v7);
     v9 = v8;
