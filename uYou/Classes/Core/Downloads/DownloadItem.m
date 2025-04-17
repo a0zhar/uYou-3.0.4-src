@@ -1,32 +1,5 @@
 @implementation DownloadItem
 
-// setDownloadIdentifier (sub_12E1A80)
-id __fastcall sub_12E1A80(void *a1) {return _objc_msgSend(a1, "setDownloadIdentifier:");}
-// setVideoID (sub_12E6240)
-id __fastcall sub_12E6240(void *a1) {return _objc_msgSend(a1, "setVideoID:");}
-// setFilePath (sub_12E1F60)
-id __fastcall sub_12E1F60(void *a1) {return _objc_msgSend(a1, "setFilePath:");}
-// setCachedPath (sub_12E0DC0)
-id __fastcall sub_12E0DC0(void *a1) {return _objc_msgSend(a1, "setCachedPath:");}
-// setUYouItem (sub_12E5EC0)
-id __fastcall sub_12E5EC0(void *a1) {return _objc_msgSend(a1, "setUYouItem:");}
-// setType (sub_12E5E00)
-id __fastcall sub_12E5E00(void *a1) {return _objc_msgSend(a1, "setType:");}
-// URLWithString (sub_12CE3C0)
-id __fastcall sub_12CE3C0(void *a1) {return _objc_msgSend(a1, "URLWithString:");}
-// setRemoteURL (sub_12E4460)
-id __fastcall sub_12E4460(void *a1) {return _objc_msgSend(a1, "setRemoteURL:");}
-// setStatus (sub_12E5280)
-id __fastcall sub_12E5280(void *a1) {return _objc_msgSend(a1, "setStatus:");}
-// defaultCenter (sub_12D4C20)
-id __fastcall sub_12D4C20(void *a1) {return _objc_msgSend(a1, "defaultCenter");}
-// addObserver (sub_12D0440)
-id __fastcall sub_12D0440(void *a1) {return _objc_msgSend(a1, "addObserver:selector:name:object:");}
-
-id __fastcall sub_12DE500(void *a1){return _objc_msgSend(a1, "removeObserver:name:object:");}
-id __fastcall sub_12D5D20(void *a1){return _objc_msgSend(a1, "encodeObject:forKey:");}
-id __fastcall sub_12E5EC0(void *a1){return _objc_msgSend(a1, "setUYouItem:");}
-
 DownloadItem *__cdecl -[DownloadItem initWithVideoID:uYouItem:downloadID:url:filePath:cachedPath:type:](DownloadItem *self, SEL a2, id a3, id a4, id a5, id a6, id a7, id a8, int a9) {
           
   void *response; // x0
@@ -85,24 +58,26 @@ DownloadItem *__cdecl -[DownloadItem initWithVideoID:uYouItem:downloadID:url:fil
 }
 
 void __cdecl -[DownloadItem dealloc](DownloadItem *self, SEL a2) {
-  void *v3; // x0
-  id v4; // x20
-  void *v5; // x0
-  id v6; // x20
-  objc_super v7; // [xsp+0h] [xbp-30h] BYREF
+  void *notifCenterRef1; // x0
+  void *notifCenterRef2; // x0
+  id notifCenter1; // x20
+  id notifCenter2; // x20
+  objc_super superCall; // [xsp+0h] [xbp-30h] BYREF
 
-  v3 = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
-  v4 = objc_retainAutoreleasedReturnValue(v3);
-  sub_12DE500();
-  objc_release(v4);
-  v5 = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
-  v6 = objc_retainAutoreleasedReturnValue(v5);
-  sub_12DE500();
-  objc_release(v6);
-  v7.receiver = self;
-  v7.super_class = (Class)&OBJC_CLASS___DownloadItem;
-  objc_msgSendSuper2(&v7, "dealloc");
+  notifCenterRef1 = (void *)_objc_msgSend(&OBJC_CLASS___NSNotificationCenter, "defaultCenter");
+  notifCenter1 = objc_retainAutoreleasedReturnValue(notifCenterRef1);
+  // TODO (FIX): sub_12DE500();
+  objc_release(notifCenter1);
+  notifCenterRef2 = (void *)_objc_msgSend(&OBJC_CLASS___NSNotificationCenter, "defaultCenter");
+  notifCenter2 = objc_retainAutoreleasedReturnValue(notifCenterRef2);
+  // TODO (FIX): sub_12DE500();
+  objc_release(notifCenter2);
+
+  superCall.receiver = self;
+  superCall.super_class = (Class)&OBJC_CLASS___DownloadItem;
+  objc_msgSendSuper2(&superCall, "dealloc");
 }
+
 
 void __cdecl -[DownloadItem encodeWithCoder:](DownloadItem *self, SEL a2, id a3) {
   id v4; // x19
