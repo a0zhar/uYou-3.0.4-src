@@ -10,62 +10,60 @@ DownloadItem *__cdecl -[DownloadItem initWithVideoID:uYouItem:downloadID:url:fil
         id a7,
         id a8,
         int a9) {
-  id v15; // x19
-  id v16; // x20
-  id v17; // x21
-  id v18; // x22
-  id v19; // x23
-  id v20; // x25
-  DownloadItem *v21; // x0
-  DownloadItem *v22; // x24
-  void *v23; // x0
-  id v24; // x26
-  void *v25; // x0
-  id v26; // x26
-  void *v27; // x0
-  id v28; // x26
-  objc_super v30; // [xsp+0h] [xbp-60h] BYREF
 
-  v15 = objc_retain(a3);
-  v16 = objc_retain(a4);
-  v17 = objc_retain(a5);
-  v18 = objc_retain(a6);
-  v19 = objc_retain(a7);
-  v20 = objc_retain(a8);
-  v30.receiver = self;
-  v30.super_class = (Class)&OBJC_CLASS___DownloadItem;
-  v21 = objc_msgSendSuper2(&v30, "init");
-  v22 = v21;
-  if ( v21 )
-  {
-    sub_12E1A80(v21);
-    sub_12E6240(v22);
-    sub_12E1F60(v22);
-    sub_12E0DC0(v22);
-    sub_12E5EC0(v22);
-    sub_12E5E00(v22);
-    v23 = (void *)sub_12CE3C0(&OBJC_CLASS___NSURL);
-    v24 = objc_retainAutoreleasedReturnValue(v23);
-    sub_12E4460(v22);
-    objc_release(v24);
-    sub_12E5280(v22);
-    sub_12D3F20(v22);
-    v25 = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
-    v26 = objc_retainAutoreleasedReturnValue(v25);
-    sub_12D0440(v26);
-    objc_release(v26);
-    v27 = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
-    v28 = objc_retainAutoreleasedReturnValue(v27);
-    sub_12D0440(v28);
-    objc_release(v28);
+  void *response; // x0
+  void *notificationResponse; // x0
+  void *notificationCenter; // x0
+  id autoReleasedNotificationCenter; // x26
+  id autoReleasedNotification; // x26
+  id autoReleasedURL; // x26
+  DownloadItem *initializedItem; // x0
+  DownloadItem *selfItem; // x24
+  
+  id retainedVideoID = objc_retain(a3); // x19
+  id retained_uYouItem = objc_retain(a4); // x20
+  id retainedDownloadID = objc_retain(a5); // x21
+  id retainedURL = objc_retain(a6); // x22
+  id retainedFilePath = objc_retain(a7); // x23
+  id retainedCachedPath = objc_retain(a8); // x25
+
+  objc_super superClassRef; // [xsp+0h] [xbp-60h] BYREF
+  superClassRef.receiver = self;
+  superClassRef.super_class = (Class)&OBJC_CLASS___DownloadItem;
+  
+  initializedItem = objc_msgSendSuper2(&superClassRef, "init");
+  selfItem = initializedItem;
+  
+  if (initializedItem) {
+    sub_12E1A80(initializedItem);
+    sub_12E6240(selfItem);
+    sub_12E1F60(selfItem);
+    sub_12E0DC0(selfItem);
+    sub_12E5EC0(selfItem);
+    sub_12E5E00(selfItem);
+    response = (void *)sub_12CE3C0(&OBJC_CLASS___NSURL);
+    autoReleasedURL = objc_retainAutoreleasedReturnValue(response);
+    sub_12E4460(selfItem);
+    objc_release(autoReleasedURL);
+    sub_12E5280(selfItem);
+    sub_12D3F20(selfItem);
+    notificationResponse = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
+    autoReleasedNotification = objc_retainAutoreleasedReturnValue(notificationResponse);
+    sub_12D0440(autoReleasedNotification);
+    objc_release(autoReleasedNotification);
+    notificationCenter = (void *)sub_12D4C20(&OBJC_CLASS___NSNotificationCenter);
+    autoReleasedNotificationCenter = objc_retainAutoreleasedReturnValue(notificationCenter);
+    sub_12D0440(autoReleasedNotificationCenter);
+    objc_release(autoReleasedNotificationCenter);
   }
-  objc_release(v20);
-  objc_release(v19);
-  objc_release(v18);
-  objc_release(v17);
-  objc_release(v16);
-  objc_release(v15);
-  return v22;
+  
+  objc_release(retainedCachedPath);
+  objc_release(retainedFilePath);
+  objc_release(retainedURL);
+  objc_release(retainedDownloadID);
+  objc_release(retained_uYouItem);
+  objc_release(retainedVideoID);
+  return selfItem;
 }
 
 void __cdecl -[DownloadItem dealloc](DownloadItem *self, SEL a2) {
